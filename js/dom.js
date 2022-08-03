@@ -2,6 +2,7 @@ let customttext = document.getElementById("custom-text");
 let img = document.getElementById("kitty-img");
 let input = document.getElementById("text-input");
 let btn = document.getElementById("makeyourown-btn");
+let newFact=document.getElementById("randomize-btn");
 function callPics(response,node) {
   let imageId = response[getRandomId()].id;
   node.style.backgroundImage = `url("https://cataas.com/cat/${imageId}")`;
@@ -21,4 +22,9 @@ btn.addEventListener("click", (event) => {
   console.log(customttext)
   fetch(cataasUrl, callPics,customttext);
  setTimeout(()=>{customttext.textContent = newFact;},1000) 
+});
+newFact.addEventListener("click",(event)=>{
+  event.preventDefault();
+  fetch(url, callFacts,img);
+  fetch(cataasUrl, callPics,img);
 });
