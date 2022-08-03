@@ -8,3 +8,14 @@ function callPics(response) {
 function callFacts(response) {
   fact.textContent = response.fact;
 }
+let input = document.getElementById("text-input")
+let btn = document.getElementById("makeyourown-btn")
+window.addEventListener('load', (event) => {
+    
+});
+
+btn.addEventListener("click",()=>{
+let customttext =document.getElementById("pick")
+customttext .textContent=input.value
+
+} )
