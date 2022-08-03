@@ -1,5 +1,8 @@
+let customttext = document.getElementById("pick");
 let img = document.getElementById("kitty-img");
 let fact = document.getElementById("fact");
+let input = document.getElementById("text-input");
+let btn = document.getElementById("makeyourown-btn");
 
 function callPics(response) {
   let imageId = response[getRandomId()].id;
@@ -9,14 +12,11 @@ function callFacts(response) {
   fact.textContent = response.fact;
 }
 
-let input = document.getElementById("text-input")
-let btn = document.getElementById("makeyourown-btn")
-window.addEventListener('load', (event) => {
-    
+window.addEventListener("load", (event) => {
+  fetch(url, callFacts);
+  fetch(cataasUrl, callPics);
 });
 
-btn.addEventListener("click",()=>{
-let customttext =document.getElementById("pick")
-customttext .textContent=input.value
-
-} )
+btn.addEventListener("click", () => {
+  customttext.textContent = input.value;
+});
