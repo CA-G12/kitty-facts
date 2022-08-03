@@ -6,7 +6,7 @@ let btn = document.getElementById("makeyourown-btn");
 
 function callPics(response) {
   let imageId = response[getRandomId()].id;
-  img.src = `https://cataas.com/cat/${imageId}`;
+  img.style.backgroundImage = `url("https://cataas.com/cat/${imageId}")`;
 }
 function callFacts(response) {
   fact.textContent = response.fact;
