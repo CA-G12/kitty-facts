@@ -21,11 +21,11 @@ body{
 .kitty-img{
     width: 25rem;
     height: 20rem;
-    display: block;
+    display: flex;
     background-size: cover;    
     color:rgb(255, 255, 255);
+    align-items: center;
     text-align: center;
-    padding: 50% 10% 0% 10%;
     margin: 1rem;
     font-size: medium;
     font-weight: 900;
