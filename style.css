@@ -24,7 +24,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 background:#333333;
-transition :opacity 1.5s,visibility  1.5s;
+transition :opacity .75s,visibility  .75s;
 }
 .loader--hidden{
 opacity:0;
@@ -37,7 +37,7 @@ height:75px;
 border:15px solid #dddddd;
 border-top-color:#009578;
 border-radius:50%;
- animation:loading 1.5s  ease infinite
+ animation:loading .75s  ease infinite
 
 }
 @keyframes loading{
@@ -91,5 +91,10 @@ transform:rotate(1turn);
     text-align: center;
     padding: 50% 10% 0% 10%;
     margin: 1rem;
+    color:rgb(255, 255, 255);
+    text-align: center;
+    font-size: medium;
+    font-weight: 900;
+    text-shadow: 2px 2px 6px #000000;
 }
 
