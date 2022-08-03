@@ -14,5 +14,4 @@ function fetch(url, callback) {
   xhr.send();
 }
 
-fetch(url, callFacts);
-fetch(cataasUrl, callPics);
+
