@@ -1,22 +1,24 @@
+let customttext = document.getElementById("custom-text");
 let img = document.getElementById("kitty-img");
-let fact = document.getElementById("fact");
-
-function callPics(response) {
+let input = document.getElementById("text-input");
+let btn = document.getElementById("makeyourown-btn");
+function callPics(response,node) {
   let imageId = response[getRandomId()].id;
-  img.src = `https://cataas.com/cat/${imageId}`;
+  node.style.backgroundImage = `url("https://cataas.com/cat/${imageId}")`;
 }
-function callFacts(response) {
-  fact.textContent = response.fact;
+function callFacts(response,node) {
+  node.textContent = response.fact;
 }
 
-let input = document.getElementById("text-input")
-let btn = document.getElementById("makeyourown-btn")
-window.addEventListener('load', (event) => {
-    
+window.addEventListener("load", (event) => {
+  fetch(url, callFacts,img);
+  fetch(cataasUrl, callPics,img);
 });
 
-btn.addEventListener("click",()=>{
-let customttext =document.getElementById("pick")
-customttext .textContent=input.value
-
-} )
+btn.addEventListener("click", (event) => {
+  event.preventDefault();
+  let newFact=input.value;
+  console.log(customttext)
+  fetch(cataasUrl, callPics,customttext);
+ setTimeout(()=>{customttext.textContent = newFact;},1000) 
+});
