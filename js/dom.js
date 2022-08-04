@@ -20,14 +20,11 @@ window.addEventListener("load", (event) => {
   fetch(cataasUrl, callPics, img);
 });
 
-btn.addEventListener("click", () => {
-  customttext.textContent = input.value;
-});
-
 btn.addEventListener("click", (event) => {
+  customttext.textContent = input.value;
   event.preventDefault();
   let newFact = input.value;
-  console.log(customttext);
+  input.value="";
   fetch(cataasUrl, callPics, customttext);
   setTimeout(() => {
     customttext.textContent = newFact;
